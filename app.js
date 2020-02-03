@@ -24,6 +24,7 @@ var controller = (function (budgetCtrl, UICtrl) {
 
         // Get the field input data
         var input = UICtrl.getInput();
+        console.log(input);
         // Add the item to the budget controller
 
         // Add the item to the UI
@@ -40,4 +41,4 @@ var controller = (function (budgetCtrl, UICtrl) {
             ctrlAddItem();
         }
     })
-})();
+})(budgetController, UIController);
