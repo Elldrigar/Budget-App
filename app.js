@@ -51,7 +51,7 @@ var budgetController = (function () {
             return newItem;
         },
 
-        ctrlDeleteItem: function (type, id) {
+        deleteItem: function (type, id) {
 
             var ids, index;
 
@@ -138,6 +138,12 @@ var UIController = (function () {
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
         },
 
+        deleteListItem: function (selectorID) {
+            var el = document.getElementById(selectorID);
+            el.parentNode.removeChild(el);
+
+        },
+
         clearFields: function () {
             var fields, fieldsArr;
             fields = document.querySelectorAll(DOMStrings.inputDescription + ', ' + DOMStrings.inputValue);
@@ -217,8 +223,9 @@ var controller = (function (budgetCtrl, UICtrl) {
             // Delete from data 
             budgetCtrl.deleteItem(type, ID);
             // Delete frim UI
-
+            UICtrl.deleteListItem(itemID);
             //Update new budget
+            updateBudget();
         }
     };
 
