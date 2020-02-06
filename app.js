@@ -153,6 +153,12 @@ var UIController = (function () {
         return (type === 'exp' ? '-' : '+') + ' ' + int + '.' + dec;
     };
 
+    var nodeListForEach = function (list, callback) {
+        for (var i = 0; i < list.length; i++) {
+            callback(list[i], i);
+        }
+    };
+
     return {
         getInput: function () {
             return {
@@ -216,11 +222,6 @@ var UIController = (function () {
 
         displayPercentages: function (percentages) {
             var fileds = document.querySelectorAll(DOMStrings.expensesPercLabel);
-            var nodeListForEach = function (list, callback) {
-                for (var i = 0; i < list.length; i++) {
-                    callback(list[i], i);
-                }
-            };
 
             nodeListForEach(fileds, function (current, index) {
                 if (percentages[index] > 0) {
@@ -239,7 +240,18 @@ var UIController = (function () {
             months = ['Styczniu', 'Lutym', 'Marcu', 'Kwietniu', 'Maju', 'Czerwcu', 'Lipcu', 'Sierpniu', 'Wrześniu', 'Październiku', 'Listopadzie', 'Grudniu'];
             year = now.getFullYear();
             document.querySelector(DOMStrings.dateLabel).textContent = months[month] + ', ' + year + ' roku';
+        },
 
+        changeType: function () {
+            var fields = document.querySelectorAll(
+                DOMStrings.inputType + ',' +
+                DOMStrings.inputDescription + ',' +
+                DOMStrings.inputValue);
+
+            nodeListForEach(fields, function (cur) {
+                cur.classList.toggle('red-focus');
+            });
+            document.querySelector(DOMStrings.inputBtn).classList.toggle('red');
         },
 
         getDOMStrings: function () {
@@ -259,6 +271,7 @@ var controller = (function (budgetCtrl, UICtrl) {
             }
         });
         document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
+        document.querySelector(DOM.inputType).addEventListener('change', UICtrl.changeType);
     };
 
     var updateBudget = function () {
