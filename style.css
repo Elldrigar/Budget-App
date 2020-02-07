@@ -26,11 +26,11 @@ body {
 }
 
 .red {
-    color: #FF5049 !important;
+    color: rgb(252, 37, 30) !important;
 }
 
 .red-focus:focus {
-    border: 1px solid #FF5049 !important;
+    border: 2px solid rgb(252, 37, 30) !important;
 }
 
 /**********************************************
@@ -183,7 +183,7 @@ body {
 .add__description:focus,
 .add__value:focus {
     outline: none;
-    border: 1px solid #28B9B5;
+    border: 2px solid #28B9B5;
 }
 
 .add__btn:focus {
