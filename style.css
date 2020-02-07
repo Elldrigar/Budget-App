@@ -46,8 +46,6 @@ body {
 .top {
     height: 40vh;
     background-image: linear-gradient(rgba(0, 19, 125, 0.934), rgba(67, 236, 255, 0.92));
-    background-size: cover;
-    background-position: center;
     position: relative;
 }
 
@@ -198,7 +196,6 @@ body {
 
 /***** LISTS *****/
 .container {
-
     width: 1000px;
     margin: 60px auto;
 }
