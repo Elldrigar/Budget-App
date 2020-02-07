@@ -6,6 +6,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --color-red: rgb(252, 37, 30);
+    --color-green: rgb(72, 203, 80);
+
+}
+
 .clearfix::after {
     content: "";
     display: table;
@@ -26,11 +32,11 @@ body {
 }
 
 .red {
-    color: rgb(252, 37, 30) !important;
+    color: var(--color-red) !important;
 }
 
 .red-focus:focus {
-    border: 2px solid rgb(252, 37, 30) !important;
+    border: 2px solid var(--color-red) !important;
 }
 
 /**********************************************
@@ -77,11 +83,11 @@ body {
 
 .budget__income {
     margin-bottom: 10px;
-    background-color: #28B9B5;
+    background-color: var(--color-green);
 }
 
 .budget__expenses {
-    background-color: #FF5049;
+    background-color: var(--color-red);
 }
 
 .budget__income--text,
@@ -167,7 +173,7 @@ body {
     font-size: 35px;
     background: none;
     border: none;
-    color: #28B9B5;
+    color: var(--color-green);
     cursor: pointer;
     display: inline-block;
     vertical-align: middle;
@@ -183,7 +189,7 @@ body {
 .add__description:focus,
 .add__value:focus {
     outline: none;
-    border: 2px solid #28B9B5;
+    border: 2px solid var(--color-green);
 }
 
 .add__btn:focus {
@@ -215,11 +221,11 @@ h2 {
 }
 
 .icome__title {
-    color: #28B9B5;
+    color: var(--color-green);
 }
 
 .expenses__title {
-    color: #FF5049;
+    color: var(--color-red);
 }
 
 .item {
@@ -258,13 +264,13 @@ h2 {
 
 .income .item__value,
 .income .item__delete--btn {
-    color: #28B9B5;
+    color: var(--color-green);
 }
 
 .expenses .item__value,
 .expenses .item__percentage,
 .expenses .item__delete--btn {
-    color: #FF5049;
+    color: var(--color-red);
 }
 
 
@@ -307,7 +313,7 @@ h2 {
 .unpaid {
     background-color: #FFDAD9 !important;
     cursor: pointer;
-    color: #FF5049;
+    color: var(--color-red);
 
 }
 
