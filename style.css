@@ -45,7 +45,7 @@ body {
 
 .top {
     height: 40vh;
-    background-image: linear-gradient(rgba(14, 168, 250, 0.797), rgba(25, 7, 142, 0.92));
+    background-image: linear-gradient(rgba(0, 19, 125, 0.934), rgba(67, 236, 255, 0.92));
     background-size: cover;
     background-position: center;
     position: relative;
@@ -53,7 +53,7 @@ body {
 
 .budget {
     position: absolute;
-    width: 350px;
+    width: 400px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -77,7 +77,7 @@ body {
 
 .budget__income,
 .budget__expenses {
-    padding: 12px;
+    padding: 14px;
     text-transform: uppercase;
 }
 
@@ -198,6 +198,7 @@ body {
 
 /***** LISTS *****/
 .container {
+
     width: 1000px;
     margin: 60px auto;
 }
