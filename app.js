@@ -150,7 +150,7 @@ var UIController = (function () {
 
         dec = numSplit[1];
 
-        return (type === 'exp' ? '-' : '+') + ' ' + int + '.' + dec;
+        return (type === 'exp' ? '-' : '+') + ' ' + int + '.' + dec + ' PLN';
     };
 
     var nodeListForEach = function (list, callback) {
